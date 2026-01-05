@@ -1,0 +1,52 @@
+{% extends "checkin/base.html" %}
+{% block content %}
+
+<h2>Dashboard</h2>
+
+<p><strong>Total Check-ins:</strong> {{ total_entries }}</p>
+
+{% if latest_entry %}
+  <p>
+    <strong>Latest Mood:</strong>
+    {{ latest_entry.get_mood_display }} <br>
+    <strong>Reflection:</strong>
+    {{ latest_entry.reflection }} <br>
+    <strong>Date:</strong>
+    {{ latest_entry.created_at }}
+    <strong>AI Sentiment:</strong>
+    {{ latest_entry.sentiment_label }}
+  </p>
+{% else %}
+  <p>No entries yet.</p>
+{% endif %}
+
+<hr>
+
+<h3>Last 7 Days Insight</h3>
+
+<ul>
+  <li>Positive days: {{ positive }}</li>
+  <li>Neutral days: {{ neutral }}</li>
+  <li>Negative days: {{ negative }}</li>
+</ul>
+
+<p><strong>Suggestion:</strong> {{ suggestion }}</p>
+
+<hr>
+
+<h3>All Entries</h3>
+<ul>
+  {% for entry in entries %}
+    <li>
+      {{ entry.created_at|date:"d M Y H:i" }} —
+      {{ entry.get_mood_display }} —
+      {{ entry.sentiment_label }} —
+      {{ entry.reflection }}
+    </li>
+  {% endfor %}
+</ul>
+
+<br>
+<a href="/">New Check-in</a>
+
+{% endblock %}
