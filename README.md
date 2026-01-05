@@ -1,35 +1,62 @@
 # MindEase 🧠
 
-MindEase is a simple, student-friendly web application that helps users reflect on their daily mood and understand emotional patterns over time using AI-powered sentiment analysis.
+MindEase is an AI-powered mood reflection web app designed for students. It allows users to log daily moods with short reflections, then analyzes the reflections using sentiment analysis to provide weekly insights and gentle suggestions for emotional awareness.
 
 ## 🚩 Problem
-Students often experience stress, mood swings, and burnout but lack simple tools to reflect on their emotional well-being consistently.
+Many students experience stress and emotional ups-and-downs, but lack simple tools to reflect on and understand their feelings over time.
 
 ## 💡 Solution
-MindEase allows users to:
-- Log daily moods with reflections
-- Automatically analyze reflection sentiment using AI
-- View weekly mood insights
-- Receive gentle, actionable suggestions
+MindEase helps users:
+- Log daily feelings and reflections
+- Automatically analyze sentiment (Positive / Neutral / Negative)
+- View summary insights for the last 7 days
+- Receive supportive suggestions based on trends
 
-This encourages self-awareness without being overwhelming or clinical.
+> **Note:** MindEase focuses on awareness and reflection — it does *not* diagnose medical conditions.
 
 ## ⚙️ Tech Stack
-- Backend: Django (Python)
-- Database: SQLite
-- AI/NLP: TextBlob Sentiment Analysis
-- Frontend: HTML, CSS (Django Templates)
-
-## 🧠 AI Feature
-We use lightweight NLP sentiment analysis to classify reflections as Positive, Neutral, or Negative.  
-This is used to generate weekly insights and supportive suggestions.
-
-> Note: MindEase does not diagnose mental health conditions. It focuses on awareness and reflection.
+- **Backend:** Django (Python)
+- **Database:** SQLite
+- **AI/NLP:** TextBlob sentiment analysis
+- **Frontend:** Django templates (HTML + CSS)
 
 
-## 🚀 Future Improvements
-- Data visualizations
-- User accounts
-- Daily reminders
-- Mobile-friendly design
+## 🚀 How to Run Locally
 
+1. Clone the repo  
+   ```bash
+   git clone https://github.com/AbhinavGupta-code/mindease.git
+````
+
+2. Create a virtual environment
+
+   ```bash
+   python -m venv venv
+   venv\Scripts\activate
+   ```
+
+3. Run migrations
+
+   ```bash
+   python manage.py migrate
+   ```
+
+4. Start the server
+
+   ```bash
+   python manage.py runserver
+   ```
+
+5. Open in browser
+   `http://127.0.0.1:8000/`
+
+---
+
+## 🔮 Future Improvements
+
+* Add visual data charts
+* User authentication
+* Reminder notifications
+* Mobile UI optimization
+
+---
